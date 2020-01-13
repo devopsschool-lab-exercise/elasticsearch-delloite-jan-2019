@@ -96,3 +96,26 @@ network.host: 0.0.0.0
 curl http://13.233.4.58:9200
 
 elasticsearch-delloite-jan-2019
+
+
+Abdul       13.126.40.78
+Parthajit   15.206.117.238
+Ved         52.66.204.118
+Praveen     52.66.210.230
+Anand       13.126.101.221
+Amit Gupta  13.232.222.184
+Vivin       13.235.17.97
+Shruti      13.127.92.184 
+Nikita      13.233.112.150
+Jyoti       52.66.202.130
+Tarini      13.232.12.91
+Amit Sahu   13.233.232.250
+Vibhavari   13.233.63.197
+
+13.235.115.150
+13.127.25.119
+13.233.4.58
+
+LOCAtion of Key - https://www.devopsschool.com/notes/docker/2019/
+Key for putty - rajesh-mumbai.ppk
+Key for SSH - rajesh-mumbai.pem

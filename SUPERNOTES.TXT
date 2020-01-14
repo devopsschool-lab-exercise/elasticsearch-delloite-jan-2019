@@ -131,3 +131,147 @@ curl http://localhost:9200/products/mobiles/_search?pretty=true -H 'Content-Type
     "stored_fields": []
 }
 '
+
+You can also search all indices with _all.
+curl -XGET 'http://localhost:9200/_all/_search?q=yourQueryHere'
+
+
+13.233.117.222 - MASTER
+13.233.193.242 - CLIENT
+3.6.126.5 - DATA
+===================================VIRUTAL MACHINE===============================
+==========================
+172.31.11.119	es-master01
+172.31.2.208	es-client01
+172.31.6.243	es-data01
+===============MASTER=========================
+cluster.name: devopsschool
+node.name: es-master01
+node.master: true
+node.data: false
+network.host: 172.31.11.119
+http.port: 9200
+discovery.seed_hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+cluster.initial_master_nodes: ["172.31.11.119",]
+curl http://172.31.11.119:9200
+===============DATA=========================
+cluster.name: devopsschool
+node.name: es-data01
+node.master: false
+node.data: true
+network.host: 172.31.6.243
+http.port: 9200
+discovery.seed_hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+cluster.initial_master_nodes: ["172.31.11.119",]
+curl http://172.31.6.243:9200
+===============CLIENT=========================
+cluster.name: devopsschool
+node.name: es-client01
+node.master: false
+node.data: false
+network.host: 172.31.2.208
+http.port: 9200
+discovery.seed_hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+cluster.initial_master_nodes: ["172.31.11.119",]
+curl http://172.31.2.208:9200
+
+
+curl -XGET '172.31.2.208:9200/_cat/health?v&pretty'
+curl -XGET 'http://172.31.2.208:9200/_cat/nodes?v&pretty'
+curl -XPUT '172.31.2.208:9200/products?&pretty'
+curl -X GET "172.31.2.208:9200/_cat/nodes"
+curl -X GET "172.31.2.208:9200/_cat/master?v"
+===================================EC2 MACHINE===============================
+===============MASTER=========================
+cluster.name: devopsschool
+node.name: es-master01
+node.master: true
+node.data: false
+network.host: 172.31.11.119
+http.port: 9200
+#discovery.seed_hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+#cluster.initial_master_nodes: ["172.31.11.119",]
+discovery.zen.ping.multicast.enabled: false 
+discovery.zen.hosts_provider: ec2
+discovery.zen.ping.unicast.hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+curl http://172.31.11.119:9200
+===============DATA=========================
+cluster.name: devopsschool
+node.name: es-data01
+node.master: false
+node.data: true
+network.host: 172.31.6.243
+http.port: 9200
+#discovery.seed_hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+#cluster.initial_master_nodes: ["172.31.11.119",]
+discovery.zen.ping.multicast.enabled: false 
+discovery.zen.hosts_provider: ec2
+discovery.zen.ping.unicast.hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+
+curl http://172.31.6.243:9200
+===============CLIENT=========================
+cluster.name: devopsschool
+node.name: es-client01
+node.master: false
+node.data: false
+network.host: 172.31.2.208
+http.port: 9200
+#discovery.seed_hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+#cluster.initial_master_nodes: ["172.31.11.119",]
+discovery.zen.ping.multicast.enabled: false 
+discovery.zen.hosts_provider: ec2
+discovery.zen.ping.unicast.hosts: ["172.31.11.119", "172.31.2.208", "172.31.6.243",]
+curl http://172.31.2.208:9200
+
+discovery.zen.ping.multicast.enabled: false 
+discovery.zen.hosts_provider: ec2
+discovery.zen.ping.unicast.hosts: ["172.31.10.53", "172.31.11.126", "172.31.13.156",]
+
+Elasticsearch 
+        What is Elasticsearch?
+        Why Elasticsearch?
+        Terminology of Elasticsearch
+        How to setup node Elasticsearch clutor?
+            Same Node - 
+                        Acting like a master - client - data
+        CRUD - Single document
+        BULT - Multiple document
+
+        DSL ------ REAL WORK.
+        Elasticsearch CLustoer as part of 3 nodes...
+        --- Setup a pre
+        --- install es
+        --- modify elasticsearch.yaml
+        --- Start a es
+        --- WORK WITH CLIENT.
+
+
+===========================================
+Contact@DevOpsSchool.com
+
+Subject - ElasticSearch Jan 2019
+
+Full Name - 
+Gmail ID
+Office ID
+Phone#
+Company - delloite
+City - Hyderabad.
+
+tutorial 
+https://www.devopsschool.com/tutorial/elastic/
+
+blogs
+https://www.devopsschool.com/blog/?s=elastic
+
+slides
+https://www.devopsschool.com/slides/elbk/index.html
+
+notes
+Github
+
+pdf
+https://www.devopsschool.com/pdf/elastic/
+
+video
+https://www.devopsschool.com/videos/

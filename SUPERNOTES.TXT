@@ -98,24 +98,36 @@ curl http://13.233.4.58:9200
 elasticsearch-delloite-jan-2019
 
 
-Abdul       13.126.40.78
-Parthajit   15.206.117.238
-Ved         52.66.204.118
-Praveen     52.66.210.230
-Anand       13.126.101.221
-Amit Gupta  13.232.222.184
-Vivin       13.235.17.97
-Shruti      13.127.92.184 
-Nikita      13.233.112.150
-Jyoti       52.66.202.130
-Tarini      13.232.12.91
-Amit Sahu   13.233.232.250
-Vibhavari   13.233.63.197
+Abdul       13.235.244.52
+Parthajit   15.206.94.4
+Ved         3.6.36.15
+Praveen     35.154.41.149
+Anand       13.235.135.138
+Amit Gupta  13.126.18.120
+Vivin       13.233.165.143
+Shruti      13.232.200.135
+Nikita      13.233.231.117
+Jyoti       35.154.150.101
+Tarini      13.232.126.21
+Amit Sahu   13.232.43.35
+Vibhavari   15.206.122.180
 
-13.235.115.150
-13.127.25.119
 13.233.4.58
+15.206.168.11
+13.232.192.179
 
 LOCAtion of Key - https://www.devopsschool.com/notes/docker/2019/
 Key for putty - rajesh-mumbai.ppk
 Key for SSH - rajesh-mumbai.pem
+
+
+Question - How can i get a document id from one index?
+
+curl http://localhost:9200/products/mobiles/_search?pretty=true -H 'Content-Type: application/json' -d '
+{ 
+    "query" : { 
+        "match_all" : {} 
+    },
+    "stored_fields": []
+}
+'
